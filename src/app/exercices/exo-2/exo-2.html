@@ -1,0 +1,15 @@
+<h2>Exercice 2 - Bindings</h2>
+
+<p>
+  <input type="button" [value]="isOn() ? 'On' : 'Off'" (click)="toggle()" />
+  <input type="button" value="Second bouton" [disabled]="!isOn()" />
+</p>
+
+<p>
+  <input type="button" [value]="clicks()" (click)="count()" />
+</p>
+
+<p>
+  <input type="text" [(ngModel)]="text" />
+  <span>{{ text() }}</span>
+</p>

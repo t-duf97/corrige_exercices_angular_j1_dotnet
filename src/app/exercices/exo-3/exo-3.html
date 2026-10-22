@@ -1,0 +1,7 @@
+<h2>Exercice 3 - Chronomètre</h2>
+
+<p class="time">{{ elapsed() | toTime }}</p>
+
+<button (click)="start()" [disabled]="state() === 'running'">Start</button>
+<button (click)="pause()" [disabled]="state() !== 'running'">Pause</button>
+<button (click)="reset()" [disabled]="state() === 'stopped'">Reset</button>

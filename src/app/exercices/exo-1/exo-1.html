@@ -1,0 +1,19 @@
+<h2>Exercice 1 - Fiche produit (bonus bindings)</h2>
+
+<div class="fiche" [class.epuise]="stock() === 0">
+  <img [src]="imageUrl" [alt]="name" />
+  <h3>{{ name }}</h3>
+  <p>{{ price }} €</p>
+
+  <button (click)="like()">J'aime ({{ likes() }})</button>
+
+  <p>
+    Quantité : <input type="number" min="1" [(ngModel)]="quantity" />
+    Total : {{ quantity() * price }} €
+  </p>
+
+  <p>Stock : {{ stock() }} <button (click)="sell()" [disabled]="stock() === 0">Vendre 1</button></p>
+  <div class="barre-fond">
+    <div class="barre" [style.width.%]="(stock() / maxStock) * 100"></div>
+  </div>
+</div>
